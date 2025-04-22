@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Jupyter and environment-specific files
+.ipynb_checkpoints/
+.env
+.DS_Store
+.vscode/
+*.log
+
 # C extensions
 *.so
 
