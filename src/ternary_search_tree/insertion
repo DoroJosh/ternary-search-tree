@@ -26,3 +26,15 @@ class TernarySearchTree:
 
             if node is None: 
                 node = Node(c) # If the node is empty, we make a new node 
+
+        def _insert(node, word, index):
+            c = word[index] 
+
+            if node is None: 
+                node = Node(c) # If the node is empty, we make a new node 
+
+            if c < node.char: 
+                node.less_than = _insert(node.less_than, word, index) 
+
+            elif c > node.char:
+                node.larger_than = _insert(node.larger_than, word, index)
