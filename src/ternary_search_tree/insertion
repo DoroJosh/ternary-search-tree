@@ -1,10 +1,10 @@
 # Initializing the insertion attributes 
 class Node: 
-    def __int__(self,char): 
+    def __int__(self, char): 
         self.char = char 
-        self.left = None # Initially, the nodes from left, middle and right side are empty 
-        self.middle = None
-        self.right = None 
+        self.less_than = None # Initially, the nodes from left, middle and right side are empty 
+        self.equal = None
+        self.larger_than = None 
         self.is_end = False # This attribute will verify if a word ended or not 
 
 # Initializing the tree 
