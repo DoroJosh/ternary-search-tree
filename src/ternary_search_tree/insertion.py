@@ -57,10 +57,10 @@ class TernarySearchTree:
             _str(node.larger_than, '_gt: ', prefix + '  ')
         lines.append(f"terminates: {self.has_empty_string}")    
         if self.root: 
-            lines.append(f"char: {self.root.char}, terminates: {self.root.is_end}")
-            _str(self.root.less_than, '_lt: ', '  ')
-            _str(self.root.equal, '_eq: ', '  ')
-            _str(self.root.larger_than, '_gt: ','  ')
+            lines.append(f"       char: {self.root.char}, terminates: {self.root.is_end}")
+            _str(self.root.less_than, '_lt: ', '     ')
+            _str(self.root.equal, '_eq: ', '     ')
+            _str(self.root.larger_than, '_gt: ','     ')
             return '\n'.join(lines)
         else:
             return "The tree is empty." # Not specified by the professor on the tests, but I believe it's good to mention 
