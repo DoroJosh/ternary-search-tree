@@ -15,3 +15,4 @@ for word in words:
 for word in words:
     found = tree.search(word)
     print(f"{word}: {'Found' if found else 'Not found'}")
+
