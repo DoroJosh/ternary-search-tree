@@ -3,8 +3,17 @@ from src.ternary_search_tree.node import Node
 
 class TernarySearchTree:
     def __init__(self):
-        """Initialize an empty Ternary Search Tree."""
-        self.root = None
+        """
+    Initialize an empty Ternary Search Tree.
+
+    Attributes:
+        root (Node or None): The root node of the tree. Starts as None.
+        size (int): The number of unique words stored in the tree.
+        has_empty_string (bool): Tracks whether an empty string has been inserted.
+    """ 
+        self.root = None # This means we start the tree with no nodes 
+        self.size = 0 
+        self.has_empty_string = False 
 
     def search(self, word):
         """
@@ -45,3 +54,64 @@ class TernarySearchTree:
             if index == len(word) - 1:
                 return node.is_end_of_word
             return self._search(node.middle, word, index + 1)
+        
+    
+    def insert(self, word):
+        """
+    Insert a word into the Ternary Search Tree.
+
+    If the word is an empty string, it sets the has_empty_string flag and 
+    increments the tree size (only once for the first insertion of an empty string).
+
+    Args:
+        word (str): The word to insert into the tree.
+    """ 
+        if word == "": # Verify if it's an empty string  
+            if not self.has_empty_string:
+                self.has_empty_string = True
+                self.size += 1
+            return
+        
+        def _insert(node, word, index):
+            c = word[index] # Current character we are trying to insert 
+
+            if node is None: 
+                node = Node(c) # If the node is empty, we make a new node 
+
+            if c < node.char: 
+                node.less_than = _insert(node.less_than, word, index) 
+
+            elif c > node.char:
+                node.larger_than = _insert(node.larger_than, word, index)
+
+            else: # The char matches exactly the node's char 
+                if index == len(word) - 1:
+                    if not node.is_end:
+                        node.is_end = True  # Set the current node as the end of a word
+                        self.size += 1  
+                else:
+                    node.equal = _insert(node.equal, word, index + 1) # Continue to the next character as we did not reach the end of the word
+
+            return node 
+        
+        self.root = _insert(self.root, word, 0) # The root of the tree is going to be the result of inserting a new word to the already existing root
+
+# Printing function 
+    def __str__(self):
+        lines = []
+        def _str(node, relation, prefix):  
+            if node is None: # This means the node on the left, for example, is empty 
+                return
+            lines.append(f"{relation}{prefix}char: {node.char}, terminates: {node.is_end}")
+            _str(node.less_than, '_lt: ', prefix + '  ')
+            _str(node.equal, '_eq: ', prefix + '  ')
+            _str(node.larger_than, '_gt: ', prefix + '  ')
+        lines.append(f"terminates: {self.has_empty_string}")    
+        if self.root: 
+            lines.append(f"       char: {self.root.char}, terminates: {self.root.is_end}")
+            _str(self.root.less_than, '_lt: ', '     ')
+            _str(self.root.equal, '_eq: ', '     ')
+            _str(self.root.larger_than, '_gt: ','     ')
+            return '\n'.join(lines)
+        else:
+            return "The tree is empty." # Not specified by the professor on the tests, but I believe it's good to mention 
