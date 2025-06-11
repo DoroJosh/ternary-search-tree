@@ -11,7 +11,7 @@ class TernarySearchTree:
         size (int): The number of unique words stored in the tree.
         has_empty_string (bool): Tracks whether an empty string has been inserted.
     """ 
-        self.root = None # This means we start the tree with no nodes 
+        self.root = None 
         self.size = 0 
         self.has_empty_string = False 
 
@@ -66,7 +66,7 @@ class TernarySearchTree:
     Args:
         word (str): The word to insert into the tree.
     """ 
-        if word == "": # Verify if it's an empty string  
+        if word == "": 
             if not self.has_empty_string:
                 self.has_empty_string = True
                 self.size += 1
@@ -84,18 +84,18 @@ class TernarySearchTree:
     Returns:
         Node: The updated node after insertion.
     """
-            c = word[index] # Current character we are trying to insert 
+            c = word[index] 
 
             if node is None: 
-                node = Node(c) # If the node is empty, we make a new node 
-
+                node = Node(c) 
+                
             if c < node.char: 
                 node.less_than = _insert(node.less_than, word, index) 
 
             elif c > node.char:
                 node.larger_than = _insert(node.larger_than, word, index)
 
-            else: # The char matches exactly the node's char 
+            else: 
                 if index == len(word) - 1:
                     if not node.is_end:
                         node.is_end = True  # Set the current node as the end of a word
