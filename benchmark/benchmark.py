@@ -3,6 +3,8 @@ import random
 from src.ternary_search_tree.ternary_search_tree import TernarySearchTree
 from src.ternary_search_tree.btree import BTreeWrapper
 
+import matplotlib.pyplot as plt
+
 
 def load_words(filepath: str, limit: int = None) -> list[str]:
     """Load words from a text file."""
@@ -62,3 +64,45 @@ if __name__ == "__main__":
     print("\nBenchmarking B-Tree...")
     sizes_bt, insert_bt, search_bt = benchmark_tree(BTreeWrapper, words)
     save_results("benchmark/results/btree_benchmark.csv", sizes_bt, insert_bt, search_bt)
+
+#Plotting the benchmark runs
+def plot_benchmark(sizes, insert_times_dict, search_times_dict):
+    plt.figure(figsize=(12, 5))
+
+    # Insertion time plot
+    plt.subplot(1, 2, 1)
+    for label, times in insert_times_dict.items():
+        plt.plot(sizes, times, label=label)
+    plt.title("Insert Time vs. Number of Words")
+    plt.xlabel("Number of Words")
+    plt.ylabel("Insert Time (s)")
+    plt.legend()
+    plt.grid(True)
+
+    # Search time plot
+    plt.subplot(1, 2, 2)
+    for label, times in search_times_dict.items():
+        plt.plot(sizes, times, label=label)
+    plt.title("Search Time vs. Number of Words")
+    plt.xlabel("Number of Words")
+    plt.ylabel("Search Time (s)")
+    plt.legend()
+    plt.grid(True)
+
+    plt.tight_layout()
+    plt.savefig("benchmark/benchmark_plots.png") 
+    plt.show()
+
+plot_benchmark(
+    sizes_tst,
+    {
+        "Ternary Search Tree": insert_tst,
+        "Binary Search Tree": insert_bst,
+        "B-Tree": insert_bt,
+    },
+    {
+        "Ternary Search Tree": search_tst,
+        "Binary Search Tree": search_bst,
+        "B-Tree": search_bt,
+    }
+)
