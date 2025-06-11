@@ -15,6 +15,12 @@ Attributes:
 """
 class Node:
     def __init__(self, char):
+        """
+        Initialize a new node with a character.
+
+        Args:
+            char (str): A single character for this node.
+        """
         self.char = char
         self.left = None
         self.middle = None
