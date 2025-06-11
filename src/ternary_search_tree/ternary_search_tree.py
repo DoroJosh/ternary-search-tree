@@ -21,6 +21,17 @@ class TernarySearchTree:
         return self._search(self.root, word, 0)
 
     def _search(self, node, word, index):
+        """
+        Recursive helper function to search for a word in the tree.
+
+        Args:
+            node (Node): The current node in the traversal.
+            word (str): The word being searched.
+            index (int): The current character index in the word.
+
+        Returns:
+            bool: True if the word is found, False otherwise.
+        """
         if node is None:
             return False
 
