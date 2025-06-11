@@ -73,6 +73,17 @@ class TernarySearchTree:
             return
         
         def _insert(node, word, index):
+            """
+    Recursively insert characters of a word into the Ternary Search Tree.
+
+    Args:
+        node (Node): The current node in the tree.
+        word (str): The word being inserted.
+        index (int): The current index of the character being processed.
+
+    Returns:
+        Node: The updated node after insertion.
+    """
             c = word[index] # Current character we are trying to insert 
 
             if node is None: 
