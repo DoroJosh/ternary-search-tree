@@ -22,7 +22,7 @@ class Node:
         Args:
             char (str): A single character for this node.
         """
-    def _init_(self, char: str):
+    def __init__(self, char: str):
         self.char = char
         self.is_end_of_string: bool = False
         self.left: Optional["Node"] = None
