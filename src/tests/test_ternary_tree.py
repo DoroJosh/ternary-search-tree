@@ -10,7 +10,7 @@ def load_words_from_file(relative_path: str) -> list[str]:
         list[str]: A list of non-empty stripped lines.
     """
     base_dir = os.path.dirname(__file__)
-    filepath = os.path.join(base_dir, relative_path)
+    filepath = os.path.join(base_dir, "..", relative_path)
     with open(filepath, "r") as file:
         return [line.strip() for line in file if line.strip()]
 
@@ -23,18 +23,18 @@ class TestTernarySearchTree(unittest.TestCase):
         """
         Set up test environment with a populated TST and test word lists.
         """
-        self.tst = TernarySearchTree()
-        self.words = load_words_from_file(os.path.join("data", "insert_words.txt"))
+        self.ternary_search_tree = TernarySearchTree()
+        self.words = load_words_from_file("data/insert_words.txt")
         self.non_existing = load_words_from_file(
-            os.path.join("data", "not_insert_words.txt")
+            os.path.join("data/not_insert_words.txt")
         )
 
         for word in self.words:    # Insert test words into the tree
-            self.tst.insert(word)
+            self.ternary_search_tree.insert(word)
 
     def test_insert_and_search_existing_words(self):
         for word in self.words:
-            self.assertTrue(self.tst.search(word), f"Word '{word}' should be found.")
+            self.assertTrue(self.ternary_search_tree.search(word), f"Word '{word}' should be found.")
 
     def test_search_non_existing_words(self):
         """
@@ -42,7 +42,7 @@ class TestTernarySearchTree(unittest.TestCase):
         """
         for word in self.non_existing:
             self.assertFalse(
-                self.tst.search(word), f"Word '{word}' should NOT be found."
+                self.ternary_search_tree.search(word), f"Word '{word}' should NOT be found."
             )
 
     def test_insert_duplicate_word(self):
@@ -50,14 +50,14 @@ class TestTernarySearchTree(unittest.TestCase):
         Inserting a duplicate word should not affect its retrievability.
         """
         word = self.words[0] if self.words else "apple"
-        self.tst.insert(word)
-        self.assertTrue(self.tst.search(word))
+        self.ternary_search_tree.insert(word)
+        self.assertTrue(self.ternary_search_tree.search(word))
 
     def test_empty_string_handling(self):
         """
         Searching for an empty string should always return False.
         """
-        self.assertFalse(self.tst.search(""), "Empty string should not be found.")
+        self.assertFalse(self.ternary_search_tree.search(""), "Empty string should not be found.")
 
     def test_autocomplete_basic(self):
         """
@@ -65,16 +65,16 @@ class TestTernarySearchTree(unittest.TestCase):
         """
         if "banana" in self.words:
             expected = [w for w in self.words if w.startswith("ba")]
-            self.assertCountEqual(self.tst.autocomplete("ba"), expected)
+            self.assertCountEqual(self.ternary_search_tree.autocomplete("ba"), expected)
         if "app" in self.words:
             expected = [w for w in self.words if w.startswith("app")]
-            self.assertCountEqual(self.tst.autocomplete("app"), expected)
+            self.assertCountEqual(self.ternary_search_tree.autocomplete("app"), expected)
 
     def test_autocomplete_no_results(self):
         """
         Autocomplete on a non-existent prefix should return an empty list.
         """
-        self.assertEqual(self.tst.autocomplete("zzz"), [])
+        self.assertEqual(self.ternary_search_tree.autocomplete("zzz"), [])
 
 
 if __name__ == "_main_":
