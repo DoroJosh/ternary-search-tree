@@ -26,4 +26,4 @@ class Node:
         self.middle = None
         self.right = None
         self.equal = None
-        self.is_end_of_word = False
+        self.is_end = False
