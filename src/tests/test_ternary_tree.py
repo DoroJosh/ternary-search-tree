@@ -1,5 +1,6 @@
 import unittest
-from ternary_search_tree import TernarySearchTree
+from ternary_search_tree.ternary_search_tree import TernarySearchTree
+
 
 class TestTernarySearchTree(unittest.TestCase):
     
