@@ -21,9 +21,8 @@ class Node:
         Args:
             char (str): A single character for this node.
         """
-        self.char = char
-        self.left = None
-        self.middle = None
-        self.right = None
+        self.char = char 
+        self.less_than = None
         self.equal = None
+        self.larger_than = None 
         self.is_end = False
