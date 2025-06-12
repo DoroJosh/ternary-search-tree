@@ -1,4 +1,4 @@
-from src.ternary_search_tree.node import Node
+from ternary_search_tree.node import Node
 
 
 class TernarySearchTree:
