@@ -1,3 +1,5 @@
+from typing import Optional
+
 """
 Node class for Ternary Search Tree.
 
@@ -14,15 +16,16 @@ Attributes:
     is_end_of_word (bool): True if the node marks the end of a word.
 """
 class Node:
-    def __init__(self, char):
-        """
+    """
         Initialize a new node with a character.
 
         Args:
             char (str): A single character for this node.
         """
-        self.char = char 
-        self.less_than = None
-        self.equal = None
-        self.larger_than = None 
-        self.is_end = False
+    def _init_(self, char: str):
+        self.char: str = char
+        self.is_end_of_string: bool = False
+        self.left: Optional["Node"] = None
+        self.eq: Optional["Node"] = None
+        self.right: Optional["Node"] = None
+    
