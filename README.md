@@ -26,3 +26,5 @@ TST is optimized for efficient **search** and **insert** operations on string da
 - **Commit Message Format**: Use of conventional guidelines.
 - **Pull Request**: Open pull requests should be reviewed before merging into the `development` branch.
 
+## Implementation on HPC structure
+The script used to run this project on the HPC is available under the file name 'jobscript_tst.slurm'. Note, in the script, the number of nodes and tasks were not specified because we used the default option (one node and one task)
