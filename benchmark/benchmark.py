@@ -62,3 +62,11 @@ if __name__ == "__main__":
     plt.grid(True)
     plt.show()
 
+    " Benchmarking visualization Search"    
+    plt.plot(sizes_tst, search_tst, label='TST Insert')
+    plt.plot(sizes_bt, search_bt, label='BTree Insert')
+    plt.title('Benchmarking visualization - Time to search vs Number of words')
+    plt.xlabel('Number of words')
+    plt.ylabel('Time (s)')
+    plt.grid(True)
+    plt.show()
