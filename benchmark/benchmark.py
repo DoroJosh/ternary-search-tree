@@ -36,7 +36,7 @@ def benchmark_tree(TreeClass, words: list[str], step: int = 1000):
         search_times.append(end - start)
 
         print(
-            f"{TreeClass._name_}: Has {size} words / Time to insert a word: {insert_times[-1]:.4f}s, Time to search a word: {search_times[-1]:.4f}s"
+            f"{TreeClass.__name__}: {size} words - Insert time is {insert_times[-1]:.4f}s - Search time is {search_times[-1]:.4f}s"
         )
 
     return sizes, insert_times, search_times
@@ -46,10 +46,10 @@ if __name__ == "__main__":
     word_file = "src/data/corncob_lowercase.txt"
     words = load_words(word_file, limit=10000)
 
-    print("\nBenchmarking Ternary Search Tree (TST)...")
+    print("\nBenchmarking Ternary Search Tree (TST)")
     sizes_tst, insert_tst, search_tst = benchmark_tree(TernarySearchTree, words)
 
-    print("\nBenchmarking BTree...")
+    print("\nBenchmarking BTree")
     sizes_bt, insert_bt, search_bt = benchmark_tree(BTreeWrapper, words)
 
 
