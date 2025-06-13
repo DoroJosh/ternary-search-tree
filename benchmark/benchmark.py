@@ -52,4 +52,13 @@ if __name__ == "__main__":
     print("\nBenchmarking BTree")
     sizes_bt, insert_bt, search_bt = benchmark_tree(BTreeWrapper, words)
 
+    " Benchmarking visualization Insert"
+
+    plt.plot(sizes_tst, insert_tst, label='TST Insert')
+    plt.plot(sizes_bt, insert_bt, label='BTree Insert')
+    plt.title('Benchmarking visualization - Time to insert vs Number of words')
+    plt.xlabel('Number of words')
+    plt.ylabel('Time (s)')
+    plt.grid(True)
+    plt.show()
 
