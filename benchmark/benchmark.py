@@ -1,8 +1,8 @@
 import time
 import random 
 import matplotlib.pyplot as plt
-from src.ternary_search_tree import TernarySearchTree
-from src.btree import BTreeWrapper 
+from src import BTreeWrapper 
+from src import TernarySearchTree
 
 def load_words(filepath: str, limit: int = None) -> list[str]:
     """Load words from a text file"""
@@ -60,7 +60,9 @@ if __name__ == "__main__":
     plt.xlabel('Number of words')
     plt.ylabel('Time (s)')
     plt.grid(True)
-    plt.show()
+    plt.legend()
+    plt.savefig('insert_benchmark.png')  
+    plt.clf()
 
     " Benchmarking visualization Search"    
     plt.plot(sizes_tst, search_tst, label='TST Insert')
@@ -68,5 +70,7 @@ if __name__ == "__main__":
     plt.title('Benchmarking visualization - Time to search vs Number of words')
     plt.xlabel('Number of words')
     plt.ylabel('Time (s)')
+    plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig('search.png')  
+  

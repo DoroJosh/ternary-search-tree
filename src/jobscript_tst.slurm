@@ -6,4 +6,4 @@
 #SBATCH --time=00:10:00
 
 cd ternary_search_tree
-python benchmark/benchmark.py
+python -m benchmark.benchmark # Try to pass like this to see if works
