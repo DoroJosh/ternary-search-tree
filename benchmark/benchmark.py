@@ -2,7 +2,7 @@ import time
 import random 
 import matplotlib.pyplot as plt
 from src.ternary_search_tree import TernarySearchTree
-from src.btree import BinarySearchTree 
+from src.btree import BTreeWrapper 
 
 def load_words(filepath: str, limit: int = None) -> list[str]:
     """Load words from a text file"""
@@ -50,6 +50,6 @@ if __name__ == "__main__":
     sizes_tst, insert_tst, search_tst = benchmark_tree(TernarySearchTree, words)
 
     print("\nBenchmarking BTree...")
-    sizes_bt, insert_bt, search_bt = benchmark_tree(BinarySearchTree, words)
+    sizes_bt, insert_bt, search_bt = benchmark_tree(BTreeWrapper, words)
 
 
