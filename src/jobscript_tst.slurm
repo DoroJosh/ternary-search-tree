@@ -5,6 +5,6 @@
 #SBATCH --mem=1G
 #SBATCH --time=00:10:00
 
-source ~/ve/bin/activate  
+source ~/ve310/bin/activate  
 
-python -m benchmark.benchmark
+python -m benchmark.benchmark 
