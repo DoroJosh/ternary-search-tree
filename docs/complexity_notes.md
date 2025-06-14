@@ -25,7 +25,7 @@ Benchmarking results show that our TST implementation does not exhibit linear ti
 
 ![Benchmark Graph](benchmark/plots/insert_benchmark.png)
 
-![Benchmark Graph](benchmark/plots/search.png)
+![Benchmark Graph](benchmark/plots/insert_benchmark.png)
 
 When compared to the BTree from external package, our TST has consistently higher insertion times, which is expected. The BTree benefits from low-level optimizations and mature data structures. TST still demonstrates reasonably efficient performance for both insertion and search operations. This was further confirmed by executing the benchmark on HPC structure. 
 
