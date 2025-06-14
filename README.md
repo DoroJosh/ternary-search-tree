@@ -15,7 +15,9 @@ TST is optimized for efficient **search** and **insert** operations on string da
 
 ## Features implemented
 **Insert Operation**: Efficiently inserts strings into the TST.
+
 **Search Operation**: Performs exact string searches within the tree.
+
 **performance comparison**:Includes benchmarking against a Btree implementation using Btrees.OOBTree
 
 ## Dependencies
