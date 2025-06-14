@@ -1,0 +1,36 @@
+SLURM_JOB_ID: 58227347
+SLURM_JOB_USER: vsc37501
+SLURM_JOB_ACCOUNT: lp_h_ds_students
+SLURM_JOB_NAME: jobscript_tst.slurm
+SLURM_CLUSTER_NAME: genius
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: r26i13n03
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Sat Jun 14 09:53:37 CEST 2025
+Walltime: 00-00:10:00
+========================================================================
+
+Benchmarking Ternary Search Tree (TST)
+TernarySearchTree: 1000 words - Insert time is 0.0069s - Search time is 0.0005s
+TernarySearchTree: 2000 words - Insert time is 0.0153s - Search time is 0.0011s
+TernarySearchTree: 3000 words - Insert time is 0.0264s - Search time is 0.0020s
+TernarySearchTree: 4000 words - Insert time is 0.0356s - Search time is 0.0026s
+TernarySearchTree: 5000 words - Insert time is 0.0588s - Search time is 0.0033s
+TernarySearchTree: 6000 words - Insert time is 0.0509s - Search time is 0.0039s
+TernarySearchTree: 7000 words - Insert time is 0.0588s - Search time is 0.0044s
+TernarySearchTree: 8000 words - Insert time is 0.0807s - Search time is 0.0051s
+TernarySearchTree: 9000 words - Insert time is 0.0758s - Search time is 0.0055s
+TernarySearchTree: 10000 words - Insert time is 0.0991s - Search time is 0.0064s
+
+Benchmarking BTree
+BTreeWrapper: 1000 words - Insert time is 0.0004s - Search time is 0.0000s
+BTreeWrapper: 2000 words - Insert time is 0.0007s - Search time is 0.0001s
+BTreeWrapper: 3000 words - Insert time is 0.0011s - Search time is 0.0001s
+BTreeWrapper: 4000 words - Insert time is 0.0015s - Search time is 0.0002s
+BTreeWrapper: 5000 words - Insert time is 0.0019s - Search time is 0.0003s
+BTreeWrapper: 6000 words - Insert time is 0.0024s - Search time is 0.0003s
+BTreeWrapper: 7000 words - Insert time is 0.0027s - Search time is 0.0004s
+BTreeWrapper: 8000 words - Insert time is 0.0032s - Search time is 0.0004s
+BTreeWrapper: 9000 words - Insert time is 0.0037s - Search time is 0.0005s
+BTreeWrapper: 10000 words - Insert time is 0.0041s - Search time is 0.0006s
