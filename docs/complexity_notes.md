@@ -23,9 +23,19 @@ The memory space complexity is linear O(n), where 'n' is the number of nodes. Ea
 ## Benchmark Results 
 Benchmarking results show that our TST implementation does not exhibit linear time complexity for insert operations. This behavior may be attributed to inefficiencies or overhead in our manual implementation, and suggests that further optimization is needed.
 
-![Benchmark Graph](benchmark/plots/insert_benchmark.png)
+<div align="center">
+  <img src="https://github.com/DoroJosh/ternary-search-tree/blob/main/benchmark/plots/insert_benchmark.png?raw=true" width="450"><br>
+  <b>Figure 1:</b> Insert time vs number of words 
+</div>
 
-![Benchmark Graph](benchmark/plots/insert_benchmark.png)
+<br>
+
+<div align="center">
+  <img src="https://github.com/DoroJosh/ternary-search-tree/blob/main/benchmark/plots/search_benchmark.png?raw=true" width="450"><br>
+  <b>Figure 1:</b> Search time vs number of words 
+</div>
+
+<br>
 
 When compared to the BTree from external package, our TST has consistently higher insertion times, which is expected. The BTree benefits from low-level optimizations and mature data structures. TST still demonstrates reasonably efficient performance for both insertion and search operations. This was further confirmed by executing the benchmark on HPC structure. 
 
