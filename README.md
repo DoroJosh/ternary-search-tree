@@ -19,7 +19,8 @@ TST is optimized for efficient **search** and **insert** operations on string da
 - **Traverse**: Return all words in lexicographical order (to be implemented).
 
 ## Dependencies
-- Python 3.13.2
+- Python 3.10.4 
+- On the HPC structure, the version of Python available was 3.13. Since it's a new version, it doesn't support many packages yet. For this reason we had do downgrade to a lower version.  
 
 ## Contribution Guidelines
 - **Branching**: All feature development was done on feature branches.
@@ -27,4 +28,5 @@ TST is optimized for efficient **search** and **insert** operations on string da
 - **Pull Request**: Open pull requests should be reviewed before merging into the `development` branch.
 
 ## Implementation on HPC structure
-The script used to run this project on the HPC is available under the file name 'jobscript_tst.slurm'. Note, in the script, the number of nodes and tasks were not specified because we used the default option (one node and one task)
+- The script used to run this project on the HPC is available under the file name 'jobscript_tst.slurm'. Note, in the script, the number of nodes and tasks were not specified because we used the default option (one node and one task). 
+- To allow the packages matplotlib and OOBTree to be used, we created a virtual environment (ve). In this environment, we downloaded both packages. 
