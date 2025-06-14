@@ -72,5 +72,5 @@ if __name__ == "__main__":
     plt.ylabel('Time (s)')
     plt.legend()
     plt.grid(True)
-    plt.savefig('search.png')  
+    plt.savefig('search_benchmark.png')  
   
