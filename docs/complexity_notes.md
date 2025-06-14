@@ -21,3 +21,12 @@ The memory space complexity is linear O(n), where 'n' is the number of nodes. Ea
 ---
 
 ## Benchmark Results 
+Benchmarking results show that our TST implementation does not exhibit linear time complexity for insert operations. This behavior may be attributed to inefficiencies or overhead in our manual implementation, and suggests that further optimization is needed.
+
+![Benchmark Graph](benchmark/plots/insert_benchmark.png)
+
+![Benchmark Graph](benchmark/plots/search.png)
+
+When compared to the BTree from external package, our TST has consistently higher insertion times, which is expected. The BTree benefits from low-level optimizations and mature data structures. TST still demonstrates reasonably efficient performance for both insertion and search operations. This was further confirmed by executing the benchmark on HPC structure. 
+
+Detailed performance results, including insert and search times at each scale, can be found in the file 'vsc/slurm-58227347.out'.
