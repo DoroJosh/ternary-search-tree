@@ -28,7 +28,7 @@ TST is optimized for efficient **search** and **insert** operations on string da
 
 ## Implementation on HPC structure
 - The script used to run this project on the HPC is available under the file name 'src/jobscript_tst.slurm'. Note, in the script, the number of nodes and tasks were not specified because we used the default option (one node and one task). 
-- To allow the packages matplotlib and OOBTree to be used, a virtual environment (VE) was made. Additional information about this VE can be found on the file 'benchmark/vsc/requirements.txt'.
+- To allow the a few packages to be used, a virtual environment (VE) was made. Additional information about this VE can be found on the file 'benchmark/vsc/requirements.txt'.
 
-## Complexity notes 
-- Final considerations about time and space complexity are available on 'docs/compexity_notes.md'. 
+## Benchmark and complexity notes 
+- Benchmark was done to analyze the TST's performance on insertion and search operations. This was done across increasing word volumes, and compared a B-Tree wrapper to verify time complexity. This was done on the HPC structure, the results can be found under 'benchmark/vsc/slurm-58227347.out'. 
