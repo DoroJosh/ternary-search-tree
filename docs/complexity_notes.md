@@ -32,7 +32,7 @@ Benchmarking results show that our TST implementation does not exhibit linear ti
 
 <div align="center">
   <img src="https://github.com/DoroJosh/ternary-search-tree/blob/main/benchmark/plots/search_benchmark.png?raw=true" width="450"><br>
-  <b>Figure 1:</b> Search time vs number of words 
+  <b>Figure 2:</b> Search time vs number of words 
 </div>
 
 <br>
